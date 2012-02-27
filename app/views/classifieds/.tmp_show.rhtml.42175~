@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Classified Ad</title>
+	</head>
+	<body>
+		
+		<h1><%= @classified.title %></h1>
+		<div style="float:left;"><%= image_tag @classified.photo.url %></div>
+		<strong>Price: </strong><%= number_to_currency @classified.price %><br />
+		<strong>Email: </strong><%= @classified.email %><br />
+		<strong>Description: </strong><%= @classified.description %><br />
+		
+		<p><%= link_to "Back", {:action => 'index'} %></p>
+	</body>
+</html>

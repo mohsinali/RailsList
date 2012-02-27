@@ -1,0 +1,40 @@
+%h1= "Signup"
+- form_for @user do |f|
+  - if @user.errors.any?
+    %h2= "Errors!"
+    %ul
+      - @user.errors.full_messages.each do |e|
+        %li= e
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name, {:class => "text-field"}
+  %p
+    = f.label :email
+    %br
+    = f.email_field :email, {:class => "text-field"}
+    
+  %p
+    = f.label :password
+    %br
+    = f.password_field :password, {:class => "text-field"}
+    
+  %p
+    = f.label :password_confirmation
+    %br
+    = f.password_field :password_confirmation, {:class => "text-field"}
+    
+  = f.submit "Signup"
+  
+= link_to "Sign in", signin_path
+
+
+
+
+
+
+%br Following line is a comment
+/ a big comment
+/
+  Now I will write some commented code.
+  This is a block comment.

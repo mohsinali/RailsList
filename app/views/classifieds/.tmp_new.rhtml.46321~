@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Add new Classified Ad</title>
+	</head>
+	<body>
+		<h1>Add new Classified</h1>
+		<%= form_for @classified, :html => { :multipart => true } do |f| %>
+			<p>
+				<%= f.label :title %>
+				<%= f.text_field :title %>
+			</p>			
+			<p>
+				<%= f.label :price %>
+				<%= f.text_field :price %>
+			</p>
+			<p>
+				<%= f.label :email %>
+				<%= f.email_field :email %>
+			</p>
+			<p>
+				<%= f.label :location %>
+				<%= f.text_field :location %>
+			</p>
+			<p>
+				<%= f.label :photo %>
+				<%= f.file_field :photo %>
+			</p>
+			<p>
+				<%= f.label :description %>
+				<%= f.text_area :description, :rows => 5, :cols => 30 %>
+			</p>
+			<p>				
+				<%= f.submit "Submit" %>
+			</p>			
+		<% end %>
+		
+		<p><%= link_to "Cancel", {:action => 'index'} %></p>
+	</body>
+</html>

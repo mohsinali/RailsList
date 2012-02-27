@@ -1,0 +1,12 @@
+%h1= @user.name
+= flash[:notice]
+
+%p
+  %strong= "Name: "
+  = @user.name
+  
+%p
+  %strong= "Email: "
+  = @user.email
+  
+= link_to "Back to list", :action => 'index'

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>View All Classifieds</title>
+	</head>
+	<body>
+		<%#= debug @classifieds %>
+		<h1>Classifieds</h1>
+		<% if @classifieds.blank? %>
+			<p>There is no classified.</p>
+		<% else %>
+			<% form_tag '/classifieds/complete', :method => 'put' do %>
+				<ul>
+				<% @classifieds.each do |c| %>
+					<li><%= check_box_tag "classified_ids[]", c.id %>
+						<%= c.title %><br />
+						<%= number_to_currency c.price %>
+						
+						{
+							<%= link_to "Show", {:action => 'show', :id => c.id} %> | 
+							<%= link_to "Edit", {:action => 'edit', :id => c.id} %> | 
+							<%= link_to 'Destroy', c, :confirm => 'Are you sure?', :method => :delete %>
+						}				
+					</li>
+				<% end %>
+				</ul>
+				<%= submit_tag "Mark as complete" %>
+			<% end %>
+		<% end %>
+		<%= link_to "Add new classified", {:action => 'new'} %>
+		
+	</body>
+</html>

@@ -1,0 +1,9 @@
+%h1 Blogs
+- @blogs.each do |blog|
+  = link_to blog.title, blog_path(blog.id) 
+  %br
+  %strong= "by "
+  = blog.user.name
+  %br
+  %br
+		

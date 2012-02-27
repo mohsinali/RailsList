@@ -1,0 +1,14 @@
+%h1= @title
+- form_for(:session, :url => sessions_path) do |f|
+  %p
+    = f.label :email
+    = f.email_field :email, {:class => "text-field"}
+  
+  %p
+    = f.label :password
+    = f.password_field :password, {:class => "text-field"}
+    
+  = f.submit "Submit"		
+
+=	"New User? "
+= link_to "Signup", signup_path

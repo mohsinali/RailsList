@@ -1,0 +1,24 @@
+body {
+	font-family: verdana, Arial;
+	font-size: 11px;
+}
+
+h1 { background-color: #EDEDED; padding:5px; }
+a { color:#9f1415; text-decoration:none; }
+a:hover { text-decoration: underline; }
+
+div.field_with_errors input { border:1px solid #9f1415; }
+
+div.notice {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 40%;
+	border: 5px solid #ccc;
+	margin-top: 50px;
+	padding: 20px;
+	font-weight: bold;
+}
+
+.text-field { border:1px solid #CCC; }
+
